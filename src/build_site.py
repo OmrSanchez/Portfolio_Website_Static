@@ -300,7 +300,7 @@ h2{{font-family:var(--disp);font-weight:600;font-size:clamp(26px,3.4vw,36px);let
 .card-link:hover .arr{{transform:translate(2px,-2px)}}
 
 /* certs */
-.cert-grid{{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}}
+.cert-grid{{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}}
 .cert{{border:1px solid var(--line);border-radius:var(--r);padding:20px;background:var(--panel);
   position:relative;transition:border-color .2s}}
 .cert:hover{{border-color:var(--sig-dim)}}
