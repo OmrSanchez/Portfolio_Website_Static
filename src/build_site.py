@@ -445,7 +445,7 @@ footer{{padding:30px 0 50px;font-family:var(--mono);font-size:11.5px;color:var(-
         <div>
           <!-- Optional form. Wire the action to a Formspree endpoint (formspree.io) to receive
                submissions on a static host, or delete this whole block to keep contact links-only. -->
-          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <form action="https://formspree.io/f/xdenwrzw" method="POST">
             <label for="email">Your email</label>
             <input id="email" type="email" name="email" placeholder="you@company.com" required>
             <label for="topic">Topic</label>
@@ -457,7 +457,6 @@ footer{{padding:30px 0 50px;font-family:var(--mono);font-size:11.5px;color:var(-
             <label for="msg">Message</label>
             <textarea id="msg" name="message" placeholder="Your message" required></textarea>
             <button class="btn primary" type="submit" style="justify-content:center">Send message</button>
-            <span class="form-note">Replace YOUR_FORM_ID with a Formspree endpoint, or remove this form.</span>
           </form>
         </div>
       </div>
