@@ -1,0 +1,10 @@
+title;description;url;image;goal
+Todo App;A distraction-free web app to help you focus on creating and completing tasks. Built using streamlit. ;https://github.com/OmrSanchez/my-todo-app.git;1.png;Goal: To gain familiarity with the streamlit library and use it to develop python web applications.
+Portfolio Website;A website built entirely in Python to showcase coding projects and apps.;https://pythonhow.com;2.png;Goal: Use knowledge learned to showcase my learned skills and abilities with networking and python.
+FlashCards;A flashcard app built in Python. Minimal functionality built in. MVC design pattern used with Tkinter as the GUI.;https://github.com/OmrSanchez/FlashCards.git;3.png;Goal: Practice working with csv data using the Pandas module.
+Password Manager;A password manager built in Python. Support password generation and login search and lookup. MVC and Tkinter. ;https://github.com/OmrSanchez/Password-Manager-GUI-MVC-TKinter.git;4.png;Goal: Learn data structures and manipulation using the pandas module, reading from and saving to files.
+Snake;A version of snake created in Python using the turtle module. ;https://github.com/OmrSanchez/Snake-MVC.git;5.png;Goal: Gain knowledge of an event-based design and introduction to OOP fundamentals.
+Pomodoro Timer;A pomodoro timer. Cycles between 25-min and 5-min intervals and finally one last 20 min section.;"https://github.com/OmrSanchez/Pomodoro-GUI-MVC-TKinter.git
+";6.png;Goal: Gain familiarity with simple UI design concepts and working with timers to create a realistic clock.
+Name the States - US Game;An interactive game where the user inputs state names and if correct the game will write the location on a map. Keeps track of which states need to practiced.;https://github.com/OmrSanchez/US-States-ID-Game.git;7.png;Goal: Learn interactive design and I/O management, and file handling.
+Tic-Tac-Toe;A guizero-based Tic-Tac-Toe game. Uses colors instead of symbols to track player turns. ;https://github.com/OmrSanchez/Tic-Tac-Toe__MVC-State-Machine.git;8.png;Goal: Implement learned MVC skills, gamestate using @abstractmethod and general logic engagement.
