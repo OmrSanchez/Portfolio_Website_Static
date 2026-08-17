@@ -26,7 +26,7 @@ def clean_url(u):
 NAME      = "Omar D. Sanchez"
 ROLE      = "Network &amp; Automation Engineer"
 TAGS      = ["USMC Veteran", "Secret Cleared", "9+ yrs DoD Networks"]
-EMAIL     = "osanchez.python@gmail.com"
+EMAIL     = "omar.sanchez008@gmail.com"
 LINKEDIN  = "https://linkedin.com/in/os-networks"
 GITHUB    = "https://github.com/OmrSanchez"
 
