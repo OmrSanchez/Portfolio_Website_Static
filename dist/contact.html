@@ -211,7 +211,7 @@
           <h1>Omar D. Sanchez</h1>
           <div class="role">Network &amp; Automation</div>
         </div>
-        <ul class="nav" id="nav"><li><a href="index.html" class="active"><span class="nav-node"></span>Profile</a></li><li><a href="about.html"><span class="nav-node"></span>About</a></li><li><a href="skills.html"><span class="nav-node"></span>Capabilities</a></li><li><a href="network.html"><span class="nav-node"></span>Network</a></li><li><a href="python.html"><span class="nav-node"></span>Python</a></li><li><a href="credentials.html"><span class="nav-node"></span>Credentials</a></li><li><a href="contact.html"><span class="nav-node"></span>Contact</a></li></ul>
+        <ul class="nav" id="nav"><li><a href="index.html"><span class="nav-node"></span>Profile</a></li><li><a href="about.html"><span class="nav-node"></span>About</a></li><li><a href="skills.html"><span class="nav-node"></span>Capabilities</a></li><li><a href="network.html"><span class="nav-node"></span>Network</a></li><li><a href="python.html"><span class="nav-node"></span>Python</a></li><li><a href="credentials.html"><span class="nav-node"></span>Credentials</a></li><li><a href="contact.html" class="active"><span class="nav-node"></span>Contact</a></li></ul>
         <div class="status">
           <div><span class="dot"></span><span class="live">OPEN TO OPPORTUNITIES</span></div>
           <div>USMC VETERAN &middot; SECRET CLEARED</div>
@@ -219,21 +219,35 @@
         </div>
       </aside>
     <main>
-     
-    <section class="hero" id="profile">
-      <div class="hero-grid">
+         <section id="contact" class="reveal">
+      <div class="eyebrow">Contact</div>
+      <h2>Let's build something resilient.</h2>
+      <div class="contact-grid" style="margin-top:30px">
         <div>
-          <h1>Omar D. Sanchez</h1>
-          <div class="role">Network Engineer</div>
-          <div class="tags"><span class="tag">USMC Veteran</span><span class="tag">Secret Cleared</span><span class="tag">9+ yrs DoD Networks</span></div>
-          <p class="bio">Network Engineer with over nine years of experience in Department of Defense network infrastructures. My path began in the U.S. Marine Corps building, securing, and maintaining mission-critical communications under pressure. I bring that same discipline and a security-first mindset to the modern enterprise — designing resilient architectures, implementing robust security controls, and automating complex operations with Python and Ansible to build faster, more intelligent networks.</p>
-          <div class="hero-links">
-            <a class="btn primary" href="contact.html">Get in touch</a>
-            <a class="btn" href="https://github.com/OmrSanchez" target="_blank" rel="noopener">GitHub &#8599;</a>
-            <a class="btn" href="https://linkedin.com/in/os-networks" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+          <p class="contact-lead">Open to network engineering and automation roles. The fastest way to reach me is directly:</p>
+          <div class="contact-links">
+            <a class="clink" href="mailto:omar.sanchez008@gmail.com"><span class="k">Email</span>omar.sanchez008@gmail.com</a>
+            <a class="clink" href="https://linkedin.com/in/os-networks" target="_blank" rel="noopener"><span class="k">LinkedIn</span>/in/os-networks &#8599;</a>
+            <a class="clink" href="https://github.com/OmrSanchez" target="_blank" rel="noopener"><span class="k">GitHub</span>/OmrSanchez &#8599;</a>
           </div>
         </div>
-        <div class="portrait"><img src="images/photo.jpg" alt="Omar D. Sanchez"></div>
+        <div>
+          <!-- Optional form. Wire the action to a Formspree endpoint (formspree.io) to receive
+               submissions on a static host, or delete this whole block to keep contact links-only. -->
+          <form action="https://formspree.io/f/xdenwrzw" method="POST">
+            <label for="email">Your email</label>
+            <input id="email" type="email" name="email" placeholder="you@company.com" required>
+            <label for="topic">Topic</label>
+            <select id="topic" name="topic">
+              <option>Job Inquiries</option>
+              <option>Project Proposals</option>
+              <option>Other</option>
+            </select>
+            <label for="msg">Message</label>
+            <textarea id="msg" name="message" placeholder="Your message" required></textarea>
+            <button class="btn primary" type="submit" style="justify-content:center">Send message</button>
+          </form>
+        </div>
       </div>
     </section>
   
