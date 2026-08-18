@@ -147,9 +147,9 @@ tl_html = "".join(
     f'<li><span class="tl-date">{d}</span><span class="tl-node"></span><span class="tl-text">{t}</span></li>'
     for d, t in TIMELINE)
 
-NAV = [("index","Profile"),("about","About"),("skills","Capabilities"),
-       ("network","Network"),("python","Python"),("credentials","Credentials"),
-       ("contact","Contact")]
+NAV = [("index","Profile"),("about","About"),("experience","Experience"),
+       ("skills","Capabilities"), ("network","Network"),("python","Python"),
+       ("credentials","Credentials"),("contact","Contact")]
 
 def nav_for(active):
     items = ""
@@ -190,6 +190,46 @@ about_content = f"""<section id="about" class="reveal">
           </div>
         </section>
 """
+EXPERIENCE = [
+    {"title":"Network Planning Engineer","employer":"Insight Global","client":"L3Harris Technologies",
+     "location":"Melbourne, FL","start":"Oct 2025","end":"Present","bullets":[
+        "Serve as floor coach for the FTI engineering team, adapting to the floor's needs day to day: guiding and unblocking fellow engineers, assigning and prioritizing work, and serving as an escalation point for complex issues.",
+        "Plan, design, and optimize secure, resilient network solutions for the FAA Telecommunications Infrastructure (FTI) program, the backbone carrying mission-critical communications for air traffic control across the national airspace.",
+        "Engineer routing and transport across OSPF, BGP, and EIGRP, along with MPLS and VPN/IPsec, supporting both modern and legacy telecom technologies.",
+        "Lead network upgrades, migrations, and integration of new technologies in compliance with FAA and L3Harris standards, coordinating rollouts to minimize service disruption.",
+        "Perform root cause analysis on complex, multi-vendor (Cisco and Juniper) network issues, developing mitigation strategies to strengthen reliability.",
+        "Conduct risk assessments across network infrastructure and maintain documentation, network diagrams, and compliance records supporting evolving FAA requirements."]},
+    {"title":"Network Administrator","employer":"Apex Systems","client":"Leidos",
+     "location":"Key West, FL","start":"Nov 2024","end":"Oct 2025","bullets":[
+        "Engineered and administered the enterprise network for Naval Base Key West, managing Cisco and Brocade (ICX/FCX) switches, improving overall network reliability by 5%.",
+        "Strengthened network security by implementing and maintaining 802.1X and MAC authentication protocols and configuring RADIUS server infrastructure for secure user access.",
+        "Optimized ticket resolution efficiency by 30% using HP Service Manager to monitor, document, and rapidly resolve network issues.",
+        "Led technical training sessions to mentor junior administrators, establishing best practices in network troubleshooting, security monitoring, and operational procedures.",
+        "Collaborated with cross-functional teams to plan and execute system upgrades and network expansions, ensuring minimal service disruption during technology rollouts."]},
+    {"title":"Network Installation Technician","employer":"WhiteSky Communications","client":"",
+     "location":"Miami, FL","start":"Apr 2024","end":"Oct 2024","bullets":[
+        "Engineered and deployed network hardware across 12 multi-dwelling properties, boosting system performance and capacity by 40%.",
+        "Functioned as a key field engineer, conducting on-site design discussions and site surveys to recommend network optimizations and cost-effective solutions.",
+        "Minimized downtime for hundreds of users by rapidly troubleshooting complex connectivity outages alongside the network team.",
+        "Streamlined network configuration by optimizing VLAN allocation and standardizing wireless access point (WAP) installations to precise execution standards."]},
+    {"title":"Information Technology Specialist","employer":"CourseCareers","client":"",
+     "location":"Miami, FL","start":"Feb 2024","end":"Apr 2024","bullets":[
+        "Designed and deployed virtualized environments using VMware, VirtualBox, and Hyper-V to emulate diverse IT landscapes for helpdesk and system administration scenarios.",
+        "Built hands-on learning environments requiring practical troubleshooting, system optimization, and network management."]},
+    {"title":"Satellite Internet Network Installer","employer":"Expedition Communications","client":"",
+     "location":"Miami, FL","start":"Dec 2023","end":"Feb 2024","bullets":[
+        "Designed and established high-availability, redundant network systems integrated with proprietary infrastructure, consistently meeting or exceeding SLA requirements.",
+        "Achieved a 20% reduction in operational costs through proactive maintenance and connectivity best practices.",
+        "Coordinated with vendors and internal teams to schedule and execute hardware rollouts with minimal service disruption."]},
+    {"title":"Satellite and Communications Chief","employer":"United States Marine Corps","client":"",
+     "location":"Oceanside, CA","start":"Jan 2016","end":"Feb 2024","bullets":[
+        "Led, trained, and mentored technical teams of up to 45 Marines, overseeing daily operations, performance evaluations, and professional development.",
+        "Engineered and deployed secure Wide Area Network (WAN) solutions via satellite, managing the end-to-end lifecycle for 7+ live operations from site survey to encrypted data services.",
+        "Managed a communications and IT equipment inventory valued at over $15,000,000, ensuring peak operational readiness.",
+        "Delivered technical training to hundreds of Marines on satellite systems, network protocols (VLANs, routing, switching), Linux command line, and RF theory.",
+        "Established a centralized satellite communications hub for the network operations center (NOC), connecting multiple bases and supporting 23+ successful missions.",
+        "Authored standard operating procedures for new TDMA equipment, enabling teams to operate with greater autonomy."]},
+]
 
 skills_content = f"""<section id="skills" class="reveal">
       <div class="eyebrow">Capabilities</div>
@@ -249,6 +289,27 @@ contact_content = f"""    <section id="contact" class="reveal">
           </form>
         </div>
       </div>
+    </section>
+"""
+def experience_card(role):
+    org = f'{esc(role["employer"])} &middot; contracted to {esc(role["client"])}' if role["client"] else esc(role["employer"])
+    now = ' <span class="xp-now">Current</span>' if role["end"].lower() == "present" else ""
+    bullets = "".join(f"<li>{esc(b)}</li>" for b in role["bullets"])
+    return f"""
+        <article class="xp">
+          <div class="xp-dot"></div>
+          <div class="xp-head">
+            <h3>{esc(role["title"])}{now}</h3>
+            <div class="xp-org">{org}</div>
+            <div class="xp-meta"><span>{esc(role["start"])} &ndash; {esc(role["end"])}</span><span class="xp-loc">{esc(role["location"])}</span></div>
+          </div>
+          <ul class="xp-bullets">{bullets}</ul>
+        </article>"""
+
+experience_content = f"""<section id="experience" class="reveal">
+      <div class="eyebrow">Experience</div>
+      <h2>Employment history.</h2>
+      <div class="xp-list" style="margin-top:30px">{"".join(experience_card(r) for r in EXPERIENCE)}</div>
     </section>
 """
 
@@ -361,6 +422,28 @@ def render_page(main_content, active):
     .timeline li:not(:last-child) .tl-node::after{{content:"";position:absolute;top:12px;bottom:-18px;
         width:1px;background:var(--line);left:50%}}
     .tl-text{{color:var(--mut);font-size:14px}}
+    
+        /* experience */
+    .xp-list{{position:relative;display:flex;flex-direction:column;gap:18px;padding-left:28px}}
+    .xp-list::before{{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:1px;
+      background:linear-gradient(180deg,transparent,var(--line) 8%,var(--line) 92%,transparent)}}
+    .xp{{position:relative;border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;
+      background:var(--panel);transition:border-color .2s}}
+    .xp:hover{{border-color:var(--sig-dim)}}
+    .xp-dot{{position:absolute;left:-28px;top:26px;width:11px;height:11px;border-radius:50%;
+      background:var(--bg);border:1px solid var(--sig);box-shadow:0 0 0 3px var(--sig-glow)}}
+    .xp-head h3{{font-family:var(--disp);font-size:18px;font-weight:600;display:flex;
+      align-items:center;gap:10px;flex-wrap:wrap}}
+    .xp-now{{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;
+      color:var(--sig);border:1px solid var(--sig-dim);border-radius:4px;padding:2px 7px}}
+    .xp-org{{color:var(--ink);font-size:14px;margin-top:4px}}
+    .xp-meta{{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:6px;font-family:var(--mono);
+      font-size:12px;color:var(--sig-dim)}}
+    .xp-loc{{color:var(--dim)}}
+    .xp-bullets{{list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:9px}}
+    .xp-bullets li{{position:relative;padding-left:18px;color:var(--mut);font-size:13.5px;line-height:1.55}}
+    .xp-bullets li::before{{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;
+      border-radius:50%;background:var(--sig-dim)}}
     
     /* skills */
     .skills{{display:grid;grid-template-columns:1fr 1fr;gap:18px}}
@@ -502,6 +585,7 @@ def render_page(main_content, active):
 CONTENT = {
     "index":     index_content,
     "about":    about_content,
+    "experience": experience_content,
     "skills":      skills_content,
     "network":     network_content,
     "python":      python_content,

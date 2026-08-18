@@ -107,6 +107,28 @@
         width:1px;background:var(--line);left:50%}
     .tl-text{color:var(--mut);font-size:14px}
     
+        /* experience */
+    .xp-list{position:relative;display:flex;flex-direction:column;gap:18px;padding-left:28px}
+    .xp-list::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:1px;
+      background:linear-gradient(180deg,transparent,var(--line) 8%,var(--line) 92%,transparent)}
+    .xp{position:relative;border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;
+      background:var(--panel);transition:border-color .2s}
+    .xp:hover{border-color:var(--sig-dim)}
+    .xp-dot{position:absolute;left:-28px;top:26px;width:11px;height:11px;border-radius:50%;
+      background:var(--bg);border:1px solid var(--sig);box-shadow:0 0 0 3px var(--sig-glow)}
+    .xp-head h3{font-family:var(--disp);font-size:18px;font-weight:600;display:flex;
+      align-items:center;gap:10px;flex-wrap:wrap}
+    .xp-now{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;
+      color:var(--sig);border:1px solid var(--sig-dim);border-radius:4px;padding:2px 7px}
+    .xp-org{color:var(--ink);font-size:14px;margin-top:4px}
+    .xp-meta{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:6px;font-family:var(--mono);
+      font-size:12px;color:var(--sig-dim)}
+    .xp-loc{color:var(--dim)}
+    .xp-bullets{list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:9px}
+    .xp-bullets li{position:relative;padding-left:18px;color:var(--mut);font-size:13.5px;line-height:1.55}
+    .xp-bullets li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;
+      border-radius:50%;background:var(--sig-dim)}
+    
     /* skills */
     .skills{display:grid;grid-template-columns:1fr 1fr;gap:18px}
     .skill-block{border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;
@@ -211,7 +233,7 @@
           <h1>Omar D. Sanchez</h1>
           <div class="role">Network &amp; Automation</div>
         </div>
-        <ul class="nav" id="nav"><li><a href="index.html"><span class="nav-node"></span>Profile</a></li><li><a href="about.html"><span class="nav-node"></span>About</a></li><li><a href="skills.html"><span class="nav-node"></span>Capabilities</a></li><li><a href="network.html"><span class="nav-node"></span>Network</a></li><li><a href="python.html"><span class="nav-node"></span>Python</a></li><li><a href="credentials.html"><span class="nav-node"></span>Credentials</a></li><li><a href="contact.html" class="active"><span class="nav-node"></span>Contact</a></li></ul>
+        <ul class="nav" id="nav"><li><a href="index.html"><span class="nav-node"></span>Profile</a></li><li><a href="about.html"><span class="nav-node"></span>About</a></li><li><a href="experience.html"><span class="nav-node"></span>Experience</a></li><li><a href="skills.html"><span class="nav-node"></span>Capabilities</a></li><li><a href="network.html"><span class="nav-node"></span>Network</a></li><li><a href="python.html"><span class="nav-node"></span>Python</a></li><li><a href="credentials.html"><span class="nav-node"></span>Credentials</a></li><li><a href="contact.html" class="active"><span class="nav-node"></span>Contact</a></li></ul>
         <div class="status">
           <div><span class="dot"></span><span class="live">OPEN TO OPPORTUNITIES</span></div>
           <div>USMC VETERAN &middot; SECRET CLEARED</div>
